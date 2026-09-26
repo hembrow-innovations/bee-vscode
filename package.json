@@ -1,0 +1,35 @@
+{
+  "name": "bee-vscode",
+  "displayName": "bee",
+  "description": "VS Code extension that shells bee. Not the project management tool.",
+  "version": "0.0.1",
+  "private": true,
+  "publisher": "hembrow-innovations",
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bee.showVersion",
+        "title": "Bee: Show Version"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -p . --watch",
+    "typecheck": "tsc -p . --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "@types/vscode": "1.96.0",
+    "typescript": "5.9.2",
+    "vitest": "4.1.11"
+  }
+}

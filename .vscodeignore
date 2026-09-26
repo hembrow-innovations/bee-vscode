@@ -1,0 +1,8 @@
+src/**
+**/*.ts
+**/*.map
+node_modules
+.vscode/**
+tsconfig.json
+pnpm-lock.yaml
+.gitignore
