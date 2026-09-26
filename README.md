@@ -1,6 +1,6 @@
 # bee-vscode
 
-VS Code extension that shells bee. Bee stays the project management tool. This repo is not hive-queen and not a desktop shell inside bee.
+VS Code extension that shells bee. Bee stays the project management tool. This repo is not a desktop shell.
 
 Behaviour beyond the development host and `bee --version` is not decided. Do not invent it here.
 
