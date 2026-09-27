@@ -25,4 +25,15 @@ describe("showVersionFailureMessage", () => {
 			}),
 		).toBe("Command failed: bee --version");
 	});
+
+	it("shows bee stdout and stderr when --version exits nonzero", () => {
+		expect(
+			showVersionFailureMessage({
+				code: 1,
+				message: "Command failed: bee --version",
+				stdout: "bee 0.1.0\n",
+				stderr: "failed to read hive\n",
+			}),
+		).toBe("bee 0.1.0\nfailed to read hive");
+	});
 });

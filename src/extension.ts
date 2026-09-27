@@ -6,9 +6,16 @@ export function activate(context: vscode.ExtensionContext): void {
 	const [cmd, ...args] = beeVersionArgv();
 	context.subscriptions.push(
 		vscode.commands.registerCommand("bee.showVersion", () => {
-			execFile(cmd, args, (err, stdout) => {
+			execFile(cmd, args, (err, stdout, stderr) => {
 				if (err) {
-					void vscode.window.showErrorMessage(showVersionFailureMessage(err));
+					void vscode.window.showErrorMessage(
+						showVersionFailureMessage({
+							code: err.code,
+							message: err.message,
+							stdout,
+							stderr,
+						}),
+					);
 					return;
 				}
 				void vscode.window.showInformationMessage(stdout.trim());
